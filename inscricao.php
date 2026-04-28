@@ -137,7 +137,7 @@ body>*{position:relative;z-index:1}
 <?php else:?>.poster-text{display:none}<?php endif;?>
 .form-wrap{padding:0 20px 40px;display:flex;flex-direction:column;align-items:center;position:relative;z-index:4;background:transparent}
 @media(max-width:767px){
-    body{<?php if($has_bg_mob):?>background-image:url('banner.php?id=<?=$evento['id']?>&mob');background-position:center <?=$bg_pos_y_mob?>%;<?php endif;?>}
+    body{<?php if($has_bg_mob||$has_bg):?>background-image:url('banner.php?id=<?=$evento['id']?>&mob');background-position:center <?=$bg_pos_y_mob?>%;<?php endif;?>}
     body::before{background:rgba(5,5,20,<?=$bg_overlay_mob?>)}
 }
 <?php else:?>
@@ -147,7 +147,7 @@ body>*{position:relative;z-index:1}
 .poster-ov{position:absolute;inset:0;background:rgba(5,5,20,<?=$bg_overlay?>)}
 .poster-fade{position:absolute;bottom:0;left:0;right:0;height:150px;background:linear-gradient(transparent,<?=$cor?>);z-index:2}
 .poster{min-height:<?=$poster_h_mob?>px;
-<?php if($has_bg_mob):?>background:url('banner.php?id=<?=$evento['id']?>&mob') center <?=$bg_pos_y_mob?>% / cover no-repeat;<?php endif;?>}
+<?php if($has_bg_mob||$has_bg):?>background:url('banner.php?id=<?=$evento['id']?>&mob') center <?=$bg_pos_y_mob?>% / cover no-repeat;<?php endif;?>}
 .poster-ov{background:rgba(5,5,20,<?=$bg_overlay_mob?>)}
 <?php if($show_title):?>
 .poster-text{position:relative;z-index:3;text-align:center;padding:60px 20px 80px;min-height:<?=$poster_h_mob?>px;display:flex;flex-direction:column;align-items:center;justify-content:center}
